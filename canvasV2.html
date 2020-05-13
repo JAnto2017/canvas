@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas_II</title>
+    <script src="jspdf.min.js"></script>
+    <script src="canvasV2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <style>
+        h1 {
+            color: rgb(40, 59, 231);
+            text-shadow: 2px 3px 9px rgb(201, 39, 201);
+            text-align: center;
+        }
+
+        label {
+            background-color: rgb(163, 241, 132);
+            color: blue;
+            font-size: 22px;
+        }
+
+        textarea {
+            overflow: hidden;
+        }
+
+        textarea:focus {
+            border: 3px solid rgb(82, 216, 49);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function(){
+            $("label").mouseenter(function(){
+                $(this).css("font-size","30px");
+                 $(this).css("background-color","rgb(201,39,201)");
+            });
+            $("label").mouseleave(function(){
+                $(this).css("font-size","22px");
+                $(this).css("background-color","rgb(163,241,132)");
+            });
+            $("label").click(function(){
+                $("textarea").animate({
+                    height: 'toggle'
+                });
+            });
+        });
+        //--------------------------------------------------------
+
+    </script>
+    <h1>CREAR CANVAS</h1>
+    <section>
+        <form>
+            <label for="a1">Competencia Clave:</label><br>
+            <textarea name="a1" id="a1" cols="78" rows="7"
+                placeholder="Montar..., determinar sus características y aplicaciones." maxlength="300"
+                spellcheck="true"></textarea><br>
+            <label for="b1">Estándar de Aprendizaje:</label><br>
+            <textarea name="b1" id="b1" cols="78" rows="7"
+                placeholder="RD xx Se ajusta a los RA nº1, nº2 y se ajusta a los CrEv. RA-1 a) b)"
+                maxlength="300" spellcheck="true"></textarea><br>
+            <label for="c1">Recurso:</label><br>
+            <textarea name="c1" id="c1" cols="35" rows="17"
+                placeholder="Componentes electrónicos, ordenador personal, equipos de medición, Docente."
+                maxlength="300" spellcheck="true"></textarea><br>
+            <label for="d1">Método de Evaluación:</label><br>
+            <textarea name="d1" id="d1" cols="70" rows="22"
+                placeholder="Se describe la Rúbrica. Cálculos 10%, Montajes 25%, Mediciones 25%, Exposición 40% - Descripción de escala gráfica de valoración."
+                wrap="hard" maxlength="550" spellcheck="true"></textarea><br>
+            <label for="e1">Producto Final:</label><br>
+            <textarea name="e1" id="e1" cols="60" rows="22"
+                placeholder="Circuito amplificador con transistor en emisor común. A) Cálculo de la polarización, B) Montaje y medición, C) Realización página WiKi, D) Exposición y explicaciones." maxlength="550" spellcheck="true"></textarea><br>
+            <label for="f1">Taréas:</label><br>
+            <textarea name="f1" id="f1" cols="70" rows="18"
+                placeholder="Determinar las resistencias, Montar el circuito, Desarrollará el proyecto, Comprobar los resultados." maxlength="300" spellcheck="true"></textarea><br>
+            <label for="g1">Agrupamientos:</label><br>
+            <textarea name="g1" id="g1" cols="60" rows="15"
+                placeholder="Pequeño grupo entre 2 a 3 alumnos" maxlength="300" spellcheck="true"></textarea><br>
+            <label for="k1">Difusión:</label><br>
+            <textarea name="k1" id="k1" cols="78" rows="9"
+                placeholder="Los resultados obtenidos y la explicación de desarrollo del proyecto se publicarán en la WiKi" maxlength="300" spellcheck="true"></textarea><br>
+            <label for="m1">Herramientas TIC:</label><br>
+            <textarea name="m1" id="m1" cols="78" rows="12"
+                placeholder="Programa cálculo transistor, datasheet, página web oficial" maxlength="300" spellcheck="true"></textarea><br>
+
+            <!-- button -->
+            <hr>
+            <button type="button" onclick="creaPDF()">Crear PDF</button>
+        </form>
+    </section>
+</body>
+
+</html>
